@@ -1,0 +1,24 @@
+{
+  "name": "lambdas",
+  "type": "module",
+  "scripts": {
+    "ci": "biome ci . && tsc",
+    "ci:fix": "bun run format --write && bun run lint --apply",
+    "format": "biome format .",
+    "lint": "biome check .",
+    "clean": "rm -rf dist",
+    "build": "esbuild index.ts --bundle --platform=node --outdir=dist",
+    "zip": "cd dist; zip token-authorizer.zip -r *.js",
+    "bundle": "bun run clean; bun run build; bun run zip"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "jose": "5.2.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.1",
+    "@types/aws-lambda": "8.10.137",
+    "esbuild": "0.20.2",
+    "typescript": "5.4.5"
+  }
+}

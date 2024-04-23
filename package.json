@@ -8,8 +8,8 @@
     "lint": "biome check .",
     "clean": "rm -rf dist",
     "build": "esbuild index.ts --bundle --platform=node --outdir=dist",
-    "zip": "cd dist; zip token-authorizer.zip -r *.js",
-    "bundle": "bun run clean; bun run build; bun run zip"
+    "zip": "cd dist && zip token-authorizer.zip -r *.js",
+    "bundle": "bun run clean; bun run build && bun run zip"
   },
   "dependencies": {
     "dotenv": "16.4.5",

@@ -1,6 +1,7 @@
 {
   "name": "lambdas",
   "type": "module",
+  "license": "Apache-2.0",
   "scripts": {
     "ci": "biome ci . && tsc",
     "ci:fix": "bun run format --write && bun run lint --apply",

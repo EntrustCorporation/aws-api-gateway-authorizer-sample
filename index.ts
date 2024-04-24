@@ -4,7 +4,7 @@ import { config } from "dotenv";
 import { createRemoteJWKSet, jwtVerify } from "jose";
 
 config();
-const JWKS_URL = process.env.JWKS_URI;
+const JWKS_URI = process.env.JWKS_URI;
 const AUDIENCE = process.env.AUDIENCE;
 const ISSUER = process.env.ISSUER;
 
@@ -13,21 +13,22 @@ export const handler: APIGatewayTokenAuthorizerHandler = async (
 ): Promise<APIGatewayAuthorizerResult> => {
   const { authorizationToken, methodArn } = event;
 
-  if (!(JWKS_URL && AUDIENCE && ISSUER)) {
+  if (!(JWKS_URI && AUDIENCE && ISSUER)) {
     throw new Error("Misconfigured environment variables");
   }
 
-  const JWKS = createRemoteJWKSet(new URL(JWKS_URL));
+  const JWKS = createRemoteJWKSet(new URL(JWKS_URI));
 
   // Expecting the authorization token to be in the form <Bearer authToken>
   const stringTokens = authorizationToken.split(" ");
   if (stringTokens.length !== 2 || stringTokens[0] !== "Bearer") {
     throw new Error("Invalid token format - does not match <Bearer authToken>");
   }
+  const jwt = stringTokens[1];
 
   try {
     // Verify the access token
-    const jwtVerifyResult = await jwtVerify(authorizationToken, JWKS, {
+    const jwtVerifyResult = await jwtVerify(jwt, JWKS, {
       audience: process.env.AUDIENCE,
       issuer: process.env.ISSUER,
     });

@@ -8,7 +8,8 @@
     "format": "biome format .",
     "lint": "biome check .",
     "clean": "rm -rf dist",
-    "build": "esbuild index.ts --bundle --platform=node --outdir=dist",
+    "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.cjs",
+    "test": "lambda-local --timeout 300 --lambda-path dist/index.cjs --event-path event.json --envfile .env",
     "zip": "cd dist && zip token-authorizer.zip -r *.js",
     "bundle": "bun run clean; bun run build && bun run zip"
   },
@@ -20,6 +21,7 @@
     "@biomejs/biome": "1.7.1",
     "@types/aws-lambda": "8.10.137",
     "esbuild": "0.20.2",
+    "lambda-local": "2.2.0",
     "typescript": "5.4.5"
   }
 }

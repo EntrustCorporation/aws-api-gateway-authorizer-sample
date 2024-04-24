@@ -1,0 +1,4 @@
+# copy this file to .env and fill in the <templates>
+JWKS_URI=<url_for_the_jwks_endpoint>
+AUDIENCE=<api_audience>
+ISSUER=<token_issuer>

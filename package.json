@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.cjs",
     "test": "lambda-local --timeout 300 --lambda-path dist/index.cjs --event-path event.json --envfile .env",
-    "zip": "cd dist && zip token-authorizer.zip -r *.js",
+    "zip": "cd dist && zip token-authorizer.zip -r *.cjs",
     "bundle": "bun run clean; bun run build && bun run zip"
   },
   "dependencies": {

@@ -37,7 +37,7 @@ export const handler: APIGatewayTokenAuthorizerHandler = async (
       policyDocument: generatePolicyDocument(methodArn, "Allow"),
     };
   } catch (e) {
-    throw new Error("Invalid token");
+    throw new Error("Unauthorized");
   }
 };
 

@@ -9,7 +9,7 @@ key available at the configured JWKS endpoint.
 
 You will need:
 - An AWS account
-- A token issuer (e.g. an IDaaS account with an OIDC application)
+- A token issuer (e.g. an [IDaaS account](#create-a-free-account-in-idaas) with an OIDC application)
 
 When using an IDaaS OIDC application, ensure that the appropriate APIs/URLs resource servers have been configured as well.
 
@@ -68,6 +68,7 @@ bun run build
     ```
 
 ## Deploying Sample to AWS
+
 To use this sample to protect your AWS REST API Gateway:
 1. Bundle the sample code into an upload-able zip by running `bun run bundle`. It will be located in the `/dist` directory.
 2. Navigate to the [AWS Lambda console](https://console.aws.amazon.com/lambda), and click **Create function**.
@@ -102,6 +103,14 @@ To use this sample to protect your AWS REST API Gateway:
 ## Next Steps
 
 ### Scope Limited Access
+
 After adding this custom authorizer to protect your AWS API Gateway endpoints, you might want to limit access to individual
 endpoints based on the allowed scopes of the authorized party (e.g. `read:resource`). To do this, leverage the `authorizationScopes`
 property of each gateway method to define the scopes required to invoke the method.
+
+## Create a Free Account in IDaaS
+
+Entrust Identity as a Service (IDaaS) is a cloud-based identity and access management (IAM) solution with multi-factor 
+authentication (MFA), credential-based passwordless access, and single sign-on (SSO).
+
+Visit [Entrust IDaaS](https://in.entrust.com/IDaaS/) to get started with a free account today.

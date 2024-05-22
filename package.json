@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
-    "@types/aws-lambda": "8.10.137",
+    "@types/aws-lambda": "8.10.138",
     "@types/node": "20.12.12",
     "esbuild": "0.20.2",
     "lambda-local": "2.2.0",

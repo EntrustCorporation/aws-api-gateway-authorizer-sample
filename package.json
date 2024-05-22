@@ -4,14 +4,14 @@
   "license": "Apache-2.0",
   "scripts": {
     "ci": "biome ci . && tsc",
-    "ci:fix": "bun run format --write && bun run lint --apply",
+    "ci:fix": "npm run format --write && npm run lint --apply",
     "format": "biome format .",
     "lint": "biome check .",
     "clean": "rm -rf dist",
     "build": "esbuild index.ts --bundle --platform=node --outfile=dist/index.cjs",
     "test": "lambda-local --timeout 300 --lambda-path dist/index.cjs --event-path event.json --envfile .env",
     "zip": "cd dist && zip token-authorizer.zip -r *.cjs",
-    "bundle": "bun run clean; bun run build && bun run zip"
+    "bundle": "npm run clean; npm run build && npm run zip"
   },
   "dependencies": {
     "dotenv": "16.4.5",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.7.1",
     "@types/aws-lambda": "8.10.137",
+    "@types/node": "20.12.12",
     "esbuild": "0.20.2",
     "lambda-local": "2.2.0",
     "typescript": "5.4.5"

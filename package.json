@@ -18,7 +18,7 @@
     "jose": "5.4.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.8.1",
+    "@biomejs/biome": "1.8.2",
     "@types/aws-lambda": "8.10.138",
     "@types/node": "20.14.8",
     "esbuild": "0.21.5",

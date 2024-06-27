@@ -1,4 +1,9 @@
-import type { APIGatewayAuthorizerResult, APIGatewayTokenAuthorizerEvent, PolicyDocument } from "aws-lambda";
+import type {
+  APIGatewayAuthorizerResult,
+  APIGatewayTokenAuthorizerEvent,
+  PolicyDocument,
+  StatementEffect,
+} from "aws-lambda";
 import type { APIGatewayTokenAuthorizerHandler } from "aws-lambda/trigger/api-gateway-authorizer";
 import { config } from "dotenv";
 import { createRemoteJWKSet, jwtVerify } from "jose";
@@ -42,7 +47,7 @@ export const handler: APIGatewayTokenAuthorizerHandler = async (
   }
 };
 
-const generatePolicyDocument = (resource: string, effect: string): PolicyDocument => {
+const generatePolicyDocument = (resource: string, effect: StatementEffect): PolicyDocument => {
   return {
     Version: "2012-10-17",
     Statement: [

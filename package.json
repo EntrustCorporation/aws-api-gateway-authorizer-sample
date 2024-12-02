@@ -20,7 +20,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/aws-lambda": "8.10.146",
-    "@types/node": "22.9.3",
+    "@types/node": "22.10.1",
     "esbuild": "0.24.0",
     "lambda-local": "2.2.0",
     "typescript": "5.7.2"

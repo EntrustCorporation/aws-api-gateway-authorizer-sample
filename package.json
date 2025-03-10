@@ -21,7 +21,7 @@
     "@biomejs/biome": "1.9.4",
     "@types/aws-lambda": "8.10.147",
     "@types/node": "22.13.8",
-    "esbuild": "0.25.0",
+    "esbuild": "0.25.1",
     "lambda-local": "2.2.0",
     "typescript": "5.8.2"
   }

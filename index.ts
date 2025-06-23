@@ -42,7 +42,7 @@ export const handler: APIGatewayTokenAuthorizerHandler = async (
       principalId: jwtVerifyResult.payload.sub ?? "unknown",
       policyDocument: generatePolicyDocument(methodArn, "Allow"),
     };
-  } catch (e) {
+  } catch {
     throw new Error("Unauthorized");
   }
 };

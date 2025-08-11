@@ -23,6 +23,6 @@
     "@types/node": "24.0.15",
     "esbuild": "0.25.8",
     "lambda-local": "2.2.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }

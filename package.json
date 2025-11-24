@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "dotenv": "17.2.3",
-    "jose": "6.1.1"
+    "jose": "6.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.7",

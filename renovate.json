@@ -3,6 +3,7 @@
   "configMigration": true,
   "extends": ["config:best-practices", "security:minimumReleaseAgeNpm", ":automergeAll"],
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "automerge": true
   }
 }

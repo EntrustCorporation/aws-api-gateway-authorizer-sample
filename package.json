@@ -14,7 +14,7 @@
     "bundle": "npm run clean; npm run build && npm run zip"
   },
   "dependencies": {
-    "dotenv": "17.4.0",
+    "dotenv": "17.4.1",
     "jose": "6.2.2"
   },
   "devDependencies": {
